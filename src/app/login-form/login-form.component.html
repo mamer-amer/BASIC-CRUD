@@ -1,0 +1,50 @@
+
+<h1 style="text-align:center">WELCOME TO WORKSHOP MANAGEMENT SYSTEM</h1>
+<div class="container">
+  <div class="row">
+  <div class="form-modal">
+    <p-toast></p-toast>
+    <div class="form-toggle">
+      <button id="login-toggle">log in</button>
+      <!-- <button id="signup-toggle"
+      >sign up</button> -->
+    </div>
+
+    <div id="login-form">
+      <form>
+        <input type="text"
+          placeholder="Enter email or username"  name="username" #u1/>
+        <input type="password"
+          name="password"
+          #p2
+          placeholder="Password"
+           />
+        <button type="button"
+          class="btn login" (click)="check(u1.value, p2.value)">login</button>
+        <p><a href="javascript:void(0)">Forgotten account</a></p>
+        <hr />
+
+      </form>
+    </div>
+
+    <div id="signup-form">
+      <form>
+        <input type="email"
+          placeholder="Enter your email" />
+        <input type="text"
+          placeholder="Choose username" />
+        <input type="password"
+          placeholder="Create password" />
+        <button type="button"
+          class="btn signup">create account</button>
+        <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms
+            of
+            services</a>.</p>
+        <hr />
+
+      </form>
+    </div>
+
+  </div>
+</div>
+</div>

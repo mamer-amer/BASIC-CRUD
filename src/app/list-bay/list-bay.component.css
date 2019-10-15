@@ -1,0 +1,32 @@
+ thead {
+   background: #f3f3f3;
+   color: #333;
+ }
+
+ th{
+     padding:20px;
+ }
+
+ table{
+     box-shadow: 0px 20px 16px 13px rgba(235, 223, 235, 0.59);
+     }
+
+/*      
+h1{
+  font-family: cursive
+} */
+
+.modal{
+  top: 100px !important;
+}
+
+.modal-title{
+  text-align: center;
+  font-weight: bolder;
+}
+ .modal,.model-content{
+   width: 100%;
+ }
+ .model-content{
+   padding: 30px !important;
+ }

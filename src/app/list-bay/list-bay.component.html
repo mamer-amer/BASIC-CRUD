@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-2 col-xs-2">
+      <button type="button"
+        name=""
+        id=""
+        class="btn btn-primary btn-lg btn-block"
+        style="background-color:#16a7a0"
+        (click)="back()">Back</button>
+    </div>
+<p-toast></p-toast>
+    <div class="col-sm-8 col-xs-8">
+
+    </div>
+    <div class="col-sm-2 col-xs-2">
+      <button type="button"
+        name=""
+        id=""
+        class="btn btn-warning btn-lg btn-block"
+        (click)="clear()"><b>Logout</b></button>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <!-- <div class="col-sm-2"></div> -->
+    <div class="col-sm-12">
+      <h1 style="text-align:center">BAY LIST</h1>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <th *ngFor="let col of cols">
+            {{ col.header }}
+          </th>
+          <th>
+            Actions
+          </th>
+        </thead>
+        <tbody>
+
+          <tr *ngIf="!bayList.length">
+            <td colspan="4">
+              <h2 style="text-align:center">
+                NO BAYS
+              </h2>
+
+              <button type="button"
+                name=""
+                id=""
+                class="btn btn-primary btn-lg btn-block"
+                style="background-color:#16a7a0"
+                (click)="back()">ADD</button>
+
+            </td>
+          </tr>
+
+          <tr *ngFor="let value of bayList; let i of bayList"
+            style="overflow: auto;">
+            <!-- <td></td> -->
+            <td>{{ value.name }}</td>
+            <td>{{ value.bayId }}</td>
+            <td>{{ value.surName }}</td>
+
+            <td><button type="button"
+                style="margin-left:5%;width: 30%"
+                class="btn btn-danger"
+                (click)="deleteBay(i['id'])">Delete</button>
+              <button type="button"
+                style="margin-left:15%;width: 30%;background-color:#16a7a0"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#myModal"
+                (click)="editBay(i)">Edit</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Edit Bay here -->
+<div class="container"
+  *ngIf="show">
+  <!-- Modal -->
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="modal"
+        id="myModal"
+        role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content"
+            style="
+    padding: 30px;
+">
+            <div class="modal-header">
+              <button type="button"
+                class="close"
+                data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">EDIT BAY</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row">
+                  <div class="form-group">
+                    <label>FIRST NAME</label>
+                    <input type="name"
+                      class="form-control"
+                       [(ngModel)]="firstName"
+                      id="Name"
+                      name="fname"
+                      #fname
+                      placeholder="Enter your First Name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label>BAY ID</label>
+                    <input type="name"
+                      class="form-control"
+                       [(ngModel)]="bayId"
+                      id="id"
+                      name="id"
+                      #id
+                      placeholder="Bay ID">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label>SUR NAME</label>
+                    <input type="name"
+                      class="form-control"
+                      [(ngModel)]="surName"
+                      id="sname"
+                      name="sname"
+                      #sname
+                      placeholder="Enter your Sur Name">
+                  </div>
+                </div>
+
+                <div class="row"> <button type="button"
+                    class="btn btn-info btn btn-lg btn-block" data-dismiss="modal"
+                    (click)="updateBay();"><b>UPDATE</b></button>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

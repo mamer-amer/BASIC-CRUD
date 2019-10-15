@@ -1,0 +1,68 @@
+<p-toast></p-toast>
+
+<div class="card">
+  <div class="card-body">
+    <div class="container"
+      style="padding-top:80px">
+      <div class="row">
+        <div class="col-sm-4 col-xs-4">
+          <h1 style="text-decoration: underline"><b>ADD BAY FORM</b></h1>
+        </div>
+        <div class="col-sm-4 col-xs-4"></div>
+        <div class="col-sm-4 col-xs-4">
+          <button type="button"
+            name=""
+            id=""
+            class="btn btn-primary btn-lg btn-block"
+            style="background-color:#16a7a0;margin-top: 10%;"
+            (click)="goToListOfBay()">Show All</button>
+        </div>
+      </div>
+      <form>
+        <div class="row">
+          <div class="form-group">
+            <label>FIRST NAME</label>
+            <input type="name"
+              class="form-control"
+              id="Name"
+              name="fname"
+              #fname
+              placeholder="Enter your First Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label>BAY ID</label>
+            <input type="name"
+              class="form-control"
+              id="id"
+              name="id"
+              #id
+              placeholder="Bay ID">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label>SUR NAME</label>
+            <input type="name"
+              class="form-control"
+              id="sname"
+              name="sname"
+              #sname
+              placeholder="Enter your Sur Name">
+          </div>
+        </div>
+        <div class="row"> <button type="button"
+            (click)="submit(fname.value,id.value,sname.value)"
+            class="btn btn-info btn btn-lg btn-block"><b>SUBMIT</b></button>
+        </div>
+        <br/>
+          <div class="row"> <button type="button"
+              (click)="gotoSignUp()"
+              class="btn btn-danger btn btn-lg btn-block"><b>Create a new User</b></button>
+          </div>
+
+      </form>
+    </div>
+  </div>
+</div>
